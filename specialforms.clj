@@ -35,7 +35,7 @@ example_def
   (if (empty? example_output) (quote "Was Empty") (quote "Was Not Empty")))
 
 ;let
-;names value or form localy within that let form, good for grabing results from one form and imidiatly using it in another form without needing it again
+;names value or form localy within that let form, let is a great catylist for head tail opperations an recursion as it allows vor vector deconstruction
 
 
 (let [example_output (conj [] 1)]
@@ -72,3 +72,11 @@ example_def
 (var =)
 (var map)
 (var true?)
+
+;loop/recur
+;similar to a let form, when you use loop you bind names to a value or form and have a body of processing
+;the difference is you can sellect what goes back in to the form
+;the amount of values that go back in to the loop has to be the same as the amount of starting values
+(loop [name (val)]
+  (body...usualy something that checks if loop should continue)
+  (recur (what goes back in to the loop)))
